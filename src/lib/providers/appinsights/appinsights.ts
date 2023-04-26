@@ -53,7 +53,7 @@ export class Angulartics2AppInsights {
       .subscribe((x) => this.pageTrack(x.path));
     this.angulartics2.eventTrack
       .pipe(this.angulartics2.filterDeveloperMode())
-      .subscribe((x) => this.eventTrack(x.action, x.properties));
+      .subscribe((x) => this.eventTrack({x.action, x.properties}));
     this.angulartics2.exceptionTrack
       .pipe(this.angulartics2.filterDeveloperMode())
       .subscribe((x) => this.exceptionTrack(x));
